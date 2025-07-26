@@ -8,5 +8,9 @@ class Operacao(models.Model):
     resultado = models.CharField(max_length=60)
     data_inclusao = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Operação'
+        verbose_name_plural = 'Operações'
+
     def __str__(self):
         return f'Operação de {self.usuario.username}: {self.parametros} = {self.resultados}'
