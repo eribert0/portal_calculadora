@@ -13,4 +13,4 @@ class Operacao(models.Model):
         verbose_name_plural = 'Operações'
 
     def __str__(self):
-        return f'Operação de {self.usuario.username}: {self.parametros} = {self.resultados}'
+        return f'Operação de {self.usuario.username}: {self.parametros} = {self.resultado}'
