@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Calculadora</title>
+    <link rel="stylesheet" href="{% static 'calculadora/css/style.css' %}">
+</head>
+<body>
+    
+    <div class="container-geral">
+        <div class="calculadora-grid">
+            <div class="visor">
+                <div data-operacao-anterior class="operacao-anterior"></div>
+                <div data-operacao-atual class="operacao-atual">0</div>
+            </div>
+            <button data-all-clear class="operador-especial">C</button>
+            <button data-sinal>±</button>
+            <button data-operador>%</button>
+            <button data-operador>÷</button>
+            
+            <button data-numero>7</button>
+            <button data-numero>8</button>
+            <button data-numero>9</button>
+            <button data-operador>×</button>
+            
+            <button data-numero>4</button>
+            <button data-numero>5</button>
+            <button data-numero>6</button>
+            <button data-operador>-</button>
+            
+            <button data-numero>1</button>
+            <button data-numero>2</button>
+            <button data-numero>3</button>
+            <button data-operador>+</button>
+            
+            <button data-numero class="span-two">0</button>
+            <button data-numero>.</button>
+            <button data-igual>=</button>
+        </div>
+
+        <div class="historico-painel">
+            <div class="historico-header">
+                <h2>Histórico</h2>
+                <button id="limpar-historico" class="btn-lixeira" title="Limpar histórico">
+                    🗑️
+                </button>
+            </div>
+            <div id="historico-lista" class="operacoes-historico">
+                </div>
+        </div>
+    </div>
+
+    <script src="{% static 'calculadora/js/main.js' %}" defer></script>
+</body>
+</html>
