@@ -16,7 +16,6 @@ class OperacaoAPIView(APIView):
             objetos_usuario = Operacao.objects.filter(usuario=request.user).order_by('-data_inclusao')
         else:
             # Para teste, vamos criar/pegar o primeiro usuário disponível
-            from django.contrib.auth.models import User
             user = User.objects.first()
             if user:
                 objetos_usuario = Operacao.objects.filter(usuario=user).order_by('-data_inclusao')
