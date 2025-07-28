@@ -1,4 +1,4 @@
-# Portal Calculadora 🧮
+# Portal Calculadora - Kogui Challenge 🧮
 
 Uma aplicação web de calculadora desenvolvida com Django, oferecendo uma interface moderna e funcionalidades avançadas de histórico de operações.
 
