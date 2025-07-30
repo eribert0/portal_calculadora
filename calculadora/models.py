@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 
 class Operacao(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    parametros = models.CharField(max_length=100)
+    parametros = models.CharField(max_length=100)  # Expressão para cálculo
+    parametros_exibicao = models.CharField(max_length=100, blank=True, null=True)  # Expressão para exibição
     resultado = models.CharField(max_length=60)
     data_inclusao = models.DateTimeField(auto_now_add=True)
 

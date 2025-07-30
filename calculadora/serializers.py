@@ -4,6 +4,7 @@ from .models import Operacao
 
 class OperacaoRequisicaoSerializer(serializers.Serializer):
     parametros = serializers.CharField(max_length=100)
+    parametros_exibicao = serializers.CharField(max_length=100, required=False)
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,5 +16,5 @@ class OperacaoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Operacao
-        fields = ['id', 'usuario', 'parametros', 'resultado', 'data_inclusao']
+        fields = ['id', 'usuario', 'parametros', 'parametros_exibicao', 'resultado', 'data_inclusao']
         read_only_fields = ['data_inclusao']
