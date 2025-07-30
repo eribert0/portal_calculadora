@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from simpleeval import simple_eval
+from django.contrib.auth.models import User
 
 from .models import Operacao
 from .serializers import OperacaoRequisicaoSerializer, OperacaoSerializer
@@ -31,6 +32,7 @@ class OperacaoAPIView(APIView):
         serializer.is_valid(raise_exception=True)
 
         parametros_recebidos = serializer.validated_data['parametros']
+        parametros_exibicao = serializer.validated_data.get('parametros_exibicao', parametros_recebidos)
 
         try:
             resultado_calculado = self.logica_calculo(parametro_string = parametros_recebidos)
@@ -51,6 +53,7 @@ class OperacaoAPIView(APIView):
         operacao = Operacao.objects.create(
             usuario = user,
             parametros = parametros_recebidos,
+            parametros_exibicao = parametros_exibicao,
             resultado = str(resultado_calculado)
         )
 
